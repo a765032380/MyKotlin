@@ -1,0 +1,3 @@
+interface IWashHowl {
+    fun washing()
+}
