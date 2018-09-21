@@ -5,22 +5,22 @@ fun main(args: Array<String>) {
 
 }
 fun text(){
-    println("Hello World")
-    val mString="mString"
-    println(mString)
-    val greeter=Greeter("World!")
-    greeter.greet()
-    println(greeter.sum(12,15))
-    println(greeter.sum1(13,15))
-    greeter.vars(1,2,3,4,5,6,7)
-    println(greeter.sumLambda(1,2))
-    println(greeter.mLambda("Kotlin","Kotlin"))
-    println(checkAge(9))
-    println(checkAge(22))
-    gradeStudent(10)
-    println(max(10,8))
-    println(aInb(13,10,11,12))
-    whenIn(11)
+    println("Hello World")//打印Hello World
+    val mString="mString"//定义一个变量
+    println(mString)    //打印定义的变量
+    val greeter=Greeter("World!") //相当于 new一个对象 不需要new关键词了
+    greeter.greet()  //调用对象的无参方法
+    println(greeter.sum(12,15))  //调用对象的有参方法，并打印返回结果
+    println(greeter.sum1(13,15)) //调用对象的有参方法，并打印返回结果
+    greeter.vars(1,2,3,4,5,6,7)   //调用对象的有参不限长度的方法
+    println(greeter.sumLambda(1,2))   //调用对象的Lambda，并打印返回结果
+    println(greeter.mLambda("Kotlin","Kotlin"))  //调用对象的Lambda，并打印返回结果
+    println(checkAge(9))   //打印判断结果
+    println(checkAge(22))  //打印判断结果
+    gradeStudent(10)  //类似JAVA switch
+    println(max(10,8)) //打印判断两个数大的结果
+    println(aInb(13,10,11,12))  //判断一个数是否在另一个数的区间里
+    whenIn(11)      //判断一个数在那个区间中
     forArray()
     loop()
     mList()
@@ -67,16 +67,17 @@ fun mReadLine(){
             continue
         }
     }
-        println("请输入第二个数字")
-        while (true) {
-             try {
-                 num2 =readLine()!!.toInt()
-                break
-            } catch (e: Exception) {
-                println("请输入第二个数字")
-                continue
-            }
+
+    println("请输入第二个数字")
+    while (true) {
+        try {
+            num2 =readLine()!!.toInt()
+            break
+        } catch (e: Exception) {
+            println("请输入第二个数字")
+            continue
         }
+    }
 
     println("$num1+$num2=${num1 + num2 }")
 }
@@ -103,6 +104,7 @@ fun mLambda(){
  */
 fun mList(){
     val lists = listOf("鸡蛋","大米","冰淇淋")
+
     for(list in lists){
         println("$list \t")
     }
@@ -130,16 +132,16 @@ fun mMap(){
  * 区间和循环
  */
 fun loop(){
-    val nums=1..10
-    for (num in nums){
+    val numS=1..10
+    for (num in numS){
         print("$num \t")
     }
     //以步长为2的方式打印，
-    for (num in nums step 2){
+    for (num in numS step 2){
         print("$num \t")
     }
-    nums.reversed()//反转（也就倒叙）
-    nums.count()//序列中的总数
+    numS.reversed()//反转（也就倒叙）
+    numS.count()//序列中的总数
 
 }
 
@@ -191,10 +193,12 @@ fun aInb(a:Int,vararg b:Int):Boolean{
 
 /**
  * 迭代器
+ *
+ * item 相当于list.get(i)  String 类型   items 数据源
  */
 fun forArray(){
     val items = listOf("apple","banana","kiwi")
-    for (item:String in items){
+    for (item : String in items){
         println(item)
     }
     for (index in items.indices){//循环数组脚标

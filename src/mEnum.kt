@@ -9,5 +9,5 @@ enum class Week{
 }
 
 fun main(args: Array<String>) {
-    println(Week.Wednesday.ordinal)//枚举的序列，从0开始
+    println(Week.Wednesday)//ordinal枚举的序列，从0开始  name 枚举的名称
 }
