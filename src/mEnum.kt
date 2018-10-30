@@ -9,5 +9,9 @@ enum class Week{
 }
 
 fun main(args: Array<String>) {
+    for(e in Week.values()){
+        println("Week.values=$e")
+        println("Week.values=${e.name}")
+    }
     println(Week.Wednesday)//ordinal枚举的序列，从0开始  name 枚举的名称
 }

@@ -5,6 +5,9 @@ fun main(args: Array<String>) {
 
 }
 fun text(){
+
+    var classThree=ClassThree("classThree")
+    println(classThree.a)
     println("Hello World")//打印Hello World
     val mString="mString"//定义一个变量
     println(mString)    //打印定义的变量
@@ -237,3 +240,4 @@ class Greeter(private val name:String){
         x,y->"$x*******$y"
     }
 }
+data class ClassThree(var a:String)
